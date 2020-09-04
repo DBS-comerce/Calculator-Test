@@ -5,11 +5,13 @@ import styled from "styled-components";
 const Container = styled.div`
   width: 310px;
   margin: auto;
+  border-radius: 8px;
   background: #aaaaaa;
   height: 435px;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.28);
 `;
 
 const MainInput = styled.input`
@@ -17,6 +19,7 @@ const MainInput = styled.input`
   margin: auto;
   background: #fff;
   height: 50px;
+  border-radius: 5px;
   display: flex;
   margin-top: 10px;
   border: none;
@@ -52,7 +55,7 @@ const Button = styled.div`
   border-radius: 5px;
   padding: 1px;
   &:first-child {
-    width: 290px;
+    width: 297px;
   }
 `;
 
@@ -105,7 +108,6 @@ function App() {
   };
   const equal = () => {
     makeCalculate(currentOperator);
-    // setCurrentNumber(previousNumber);
   };
 
   const clear = () => {
@@ -138,7 +140,7 @@ function App() {
   return (
     <div>
       <Container className="App">
-        <MainInput value={currentNumber}></MainInput>
+        <MainInput disabled value={currentNumber}></MainInput>
         <OperatorContainer>
           <OperatorButton onClick={() => setOperator("+")}>
             {"+"}
